@@ -23,13 +23,21 @@ const openPanel = () => {
 
 const closePanel = () => { 
     notePanel.style.display = 'none'
+
  }
 
+ const createNote = (second) => { third }
 
- 
- 
- 
- 
- 
+ const addNote = () => { 
+    if(textArea.value !== '' && category.options[category.selectedIndex].value !== '0') {
+        error.style.visbility = 'hidden'
+    } else {
+        error.style.visibility = 'visible'
+    }
+  }
+
+
+
  addBtn.addEventListener('click', openPanel);
  cancelBtn.addEventListener('click', closePanel);
+ saveBtn.addEventListener('click', addNote);
