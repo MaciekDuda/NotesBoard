@@ -16,31 +16,34 @@
 		></script>
 	</head>
 	<body>
-		<div class="menu">
-			<h1><i class="fas fa-sticky-note"></i>Notes Board</h1>
-		</div>
 
-		<div class="menu-buttons">
-			<button class="add icon">
-				<i class="fa-solid fa-square-plus"></i>Add sticky note
-			</button>
-			<button class="delete-all icon">
-				<i class="fa-solid fa-trash-can"></i>Remove all
-			</button>
+		<div class="menu">
+			<h1><i class="fas fa-sticky-note icon"></i>Notes Board</h1>
+			<div class="menu-buttons">
+				<button class="add">
+					<i class="fa-solid fa-square-plus icon"></i>Add sticky note
+				</button>
+				<button class="delete-all">
+					<i class="fa-solid fa-trash-can icon"></i>Remove all
+				</button>
+			</div>
 		</div>
 
 		<div class="note-area">
+
 			<div class="note">
-				<h3 class="note-title">Notatka #1</h3>
-				<button class="delete-note">
-					<i class="fa-solid fa-circle-xmark"></i>
-				</button>
+				<div class="note-header">
+					<h3 class="note-title">Notatka #1</h3>
+					<button class="delete-note">
+						<i class="fa-solid fa-circle-xmark"></i>
+					</button>
+				</div>
 				<div class="note-body">
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,
 					cumque?
 				</div>
 			</div>
-		</div>
+            
 
 		<div class="note-panel">
 			<h2>Add note</h2>
@@ -58,8 +61,12 @@
 			<p class="error">Fill all inputs!</p>
 
 			<div class="panel-buttons">
-				<button class="save icon"><i class="fa-solid fa-floppy-disk"></i>Save note</button>
-				<button class="cance icon"><i class="fa-solid fa-circle-xmark"></i>Cancel note</button>
+				<button class="save">
+					<i class="fa-solid fa-floppy-disk icon"></i>Save note
+				</button>
+				<button class="cancel">
+					<i class="fa-solid fa-circle-xmark icon"></i>Cancel note
+				</button>
 			</div>
 		</div>
 
