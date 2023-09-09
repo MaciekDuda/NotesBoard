@@ -1,7 +1,7 @@
 const addBtn = document.querySelector('.add');
 const saveBtn = document.querySelector('.save');
 const cancelBtn = document.querySelector('.cancel');
-const deleteAllBtn = document.getElementsByClassName('.delete-all');
+const deleteAllBtn = document.querySelector('.delete-all');
 const deleteBtn = document.getElementsByClassName('.delete-note');
 
 const noteArea = document.querySelector('.note-area');
@@ -35,7 +35,7 @@ const createNote = () => {
 
 	newNote.innerHTML = `<div class="note-header">
     <h3 class="note-title">${selectedValue} #${cardID+1}</h3>
-    <button class="delete-note">
+    <button class="delete-note" onclick="deleteNote(${cardID})">
         <i class="fa-solid fa-circle-xmark"></i>
     </button>
 </div>
@@ -46,7 +46,8 @@ const createNote = () => {
 	noteArea.appendChild(newNote);
 	cardID++;
 
-    noteCleaner()
+    noteCleaner();
+    checkColor(newNote);
 };
 
 const selectValue = () => { 
@@ -66,23 +67,50 @@ const addNote = () => {
 	}
 };
 
+const checkColor = note => {
+    switch(selectedValue) {
+        case 'Shopping':
+            note.style.backgroundColor = 'rgb(154,205,50)';
+            break;
+        case 'Work':
+            note.style.backgroundColor = 'rgb(255, 243, 0)';
+            break;
+        case 'Others':
+            note.style.backgroundColor = 'rgb(255,105,180)';
+            break;
+        case 'Appointment':
+            note.style.backgroundColor = 'rgb(0,191,255)';
+            break;
+    }
+}
+
+const deleteNote = id => { 
+const noteToDelete = document.getElementById(id)
+noteArea.removeChild(noteToDelete)
+ }
+
+ const deleteAllNotes = () => { 
+    noteArea.textContent = '';
+ }
+
 addBtn.addEventListener('click', openPanel);
 cancelBtn.addEventListener('click', closePanel);
 saveBtn.addEventListener('click', addNote);
+deleteAllBtn.addEventListener('click', deleteAllNotes);
 
 
 //playground
 
-document.getElementById('czasButton').addEventListener('click', () => {
-    const teraz = new Date();
-    const dzien = teraz.getDate();
-    const miesiac = teraz.getMonth() + 1; // Miesiące są numerowane od 0 do 11, dlatego dodajemy 1
-    const rok = teraz.getFullYear();
-    const godzina = teraz.getHours();
-    const minuta = teraz.getMinutes();
+// document.getElementById('czasButton').addEventListener('click', () => {
+//     const teraz = new Date();
+//     const dzien = teraz.getDate();
+//     const miesiac = teraz.getMonth() + 1; // Miesiące są numerowane od 0 do 11, dlatego dodajemy 1
+//     const rok = teraz.getFullYear();
+//     const godzina = teraz.getHours();
+//     const minuta = teraz.getMinutes();
 
-    // Formatowanie czasu w formacie "dzień-miesiąc-rok godzina:minuta"
-    const czas = `${dzien}-${miesiac}-${rok} ${godzina}:${minuta}`;
+//     // Formatowanie czasu w formacie "dzień-miesiąc-rok godzina:minuta"
+//     const czas = `${dzien}-${miesiac}-${rok} ${godzina}:${minuta}`;
 
-    document.getElementById('czasP').textContent = czas;
-});
+//     document.getElementById('czasP').textContent = czas;
+// });
