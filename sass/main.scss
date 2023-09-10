@@ -136,3 +136,17 @@ body {
 		visibility: hidden;
 	}
 }
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	top: 98%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #333;
+	cursor: pointer;
+
+	a {
+		text-decoration: none;
+	}
+}
