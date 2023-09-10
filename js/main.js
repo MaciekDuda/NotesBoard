@@ -7,6 +7,7 @@ const deleteBtn = document.getElementsByClassName('.delete-note');
 const noteArea = document.querySelector('.note-area');
 const notePanel = document.querySelector('.note-panel');
 const category = document.querySelector('#category');
+const title = document.querySelector('#title');
 const textArea = document.querySelector('#text');
 const error = document.querySelector('.error');
 const date = document.querySelector('.date');
@@ -16,6 +17,7 @@ let cardID = 0;
 
 const noteCleaner = () => {
 	textArea.value = '';
+	title.value = '';
 	category.selectedIndex = 0;
 	notePanel.style.display = 'none';
 };
@@ -56,7 +58,8 @@ const createNote = () => {
     </button>
     </div>
     <div class="note-body">
-    ${textArea.value}
+	<h4>${title.value}</h4>
+    <p>${textArea.value}</p>
     </div>
     <div class="note-footer">
     <p class="date">${time}</p>
@@ -76,7 +79,7 @@ const selectValue = () => {
 
 const addNote = () => {
 	if (
-		textArea.value !== '' &&
+		textArea.value !== '' && title.value !== '' &&
 		category.options[category.selectedIndex].value !== '0'
 	) {
 		createNote();
@@ -99,6 +102,9 @@ const checkColor = (note) => {
 			break;
 		case 'Appointment':
 			note.style.backgroundColor = 'rgb(0,191,255)';
+			break;
+		case 'Reminder':
+			note.style.backgroundColor = 'rgb(255,170,0)';
 			break;
 	}
 };

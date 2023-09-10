@@ -16,7 +16,6 @@
 		></script>
 	</head>
 	<body>
-
 		<div class="menu">
 			<h1><i class="fas fa-sticky-note icon"></i>Notes Board</h1>
 			<div class="menu-buttons">
@@ -29,23 +28,7 @@
 			</div>
 		</div>
 
-		<div class="note-area">
-
-			<div class="note">
-				<div class="note-header">
-					<h3 class="note-title">Notatka #1</h3>
-					<button class="delete-note">
-						<i class="fa-solid fa-circle-xmark"></i>
-					</button>
-				</div>
-				<div class="note-body">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia iusto illum asperiores suscipit perferendis Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, sit. Aut facilis quo, hic dolor saepe accusantium nostrum explicabo assumenda voluptas aspernatur minus, dolorem praesentium neque distinctio, ad molestias reiciendis.
-				</div>
-				<div class="note-footer">
-					<p class="date">01/01/2023</p>
-				</div>
-			</div>
-            
+		<div class="note-area"></div>
 
 		<div class="note-panel">
 			<h2>Add note</h2>
@@ -54,10 +37,13 @@
 				<option value="0" disabled selected>- Select category -</option>
 				<option value="1">Work</option>
 				<option value="1">Shopping</option>
-				<option value="1">Others</option>
 				<option value="1">Appointment</option>
+				<option value="1">Reminder</option>
+				<option value="1">Others</option>
 			</select>
 
+			<label for="title">Title</label>
+			<input id="title"></input>
 			<label for="text">Write your note...</label>
 			<textarea id="text"></textarea>
 

@@ -63,7 +63,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   background-color: rgba(0, 0, 0, 0.06);
 }
 .note-area .note .note-header .delete-note {
@@ -73,19 +73,22 @@ body {
   font-size: 20px;
 }
 .note-area .note .note-body {
-  padding: 20px 15px;
+  padding: 15px;
   font-size: 14px;
   text-align: justify;
 }
+.note-area .note .note-body h4 {
+  margin-bottom: 5px;
+}
 .note-area .note .note-footer {
-  text-align: right;
+  text-align: left;
   font-size: 12px;
   padding: 5px 15px;
   background-color: rgba(0, 0, 0, 0.06);
 }
 
 .note-panel {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -107,7 +110,7 @@ body {
   margin-bottom: 10px;
 }
 .note-panel #text,
-.note-panel #category {
+.note-panel #category, .note-panel #title {
   margin-bottom: 20px;
   padding: 10px 20px;
   width: 100%;
